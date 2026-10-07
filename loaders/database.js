@@ -1,0 +1,16 @@
+/**
+ * Database Loader (like Laravel database service provider).
+ */
+
+import { sequelize } from '../config/db.js';
+import '../app/models/index.js';
+
+export default async () => {
+  try {
+    await sequelize.authenticate();
+    console.log('✓ Database connection established.');
+  } catch (err) {
+    console.error('✗ Database connection failed:', err.message);
+    throw err;
+  }
+};
