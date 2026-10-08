@@ -4,12 +4,11 @@ export default function ChatWidget() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div style={{ position: 'fixed', bottom: 24, right: 24, zIndex: 100 }}>
+    <div className="chat-widget" style={{ position: 'fixed', zIndex: 100 }}>
       {open && (
         <div
+          className="chat-widget-panel"
           style={{
-            width: 320,
-            height: 420,
             background: '#fff',
             border: '1px solid var(--color-card-border)',
             borderRadius: 'var(--radius-card)',

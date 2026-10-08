@@ -277,3 +277,20 @@ a {
 .cta-section { background:linear-gradient(120deg,#f4f8ff,#e4efff); }.cta-grid > div:first-child > p { color:var(--color-text-muted); font-size:13px; line-height:1.6; max-width:500px; margin:15px 0 24px; }.laptop-card { height:225px; background:white; border-radius:8px; box-shadow:0 15px 30px #193f801c; padding:25px 35px; color:var(--color-primary); font-size:27px; position:relative; }.laptop-card strong { color:#132142; font-size:20px; display:block; margin-top:40px; }.laptop-card span { position:absolute; right:30px; bottom:25px; color:var(--color-accent); font-weight:bold; font-size:24px; }.laptop-card small { display:block; color:#5b6478; font-size:9px; }
 .faq-section { background:#fff; }.faq-grid > div:first-child > p { color:var(--color-text-muted); font-size:13px; line-height:1.6; }.faq-list details { border-bottom:1px solid #e2e8f2; padding:13px 0; }.faq-list summary { cursor:pointer; list-style:none; font-size:12px; font-weight:700; display:flex; align-items:center; gap:12px; }.faq-list summary::-webkit-details-marker { display:none; }.faq-list summary span { color:var(--color-accent); font-size:10px; }.faq-list summary b { margin-left:auto; color:var(--color-primary); font-size:17px; }.faq-list details p { color:var(--color-text-muted); font-size:11px; line-height:1.5; margin:10px 24px; }
 @media (max-width: 767px) { .hero-grid, .split-grid, .cta-grid, .faq-grid, .project-band-inner { grid-template-columns:1fr; gap:32px; }.home-hero { padding-top:35px; }.hero-art { min-height:280px; }.hero-art img { height:280px; }.stats-grid { grid-template-columns:repeat(2,1fr); gap:18px; }.stats-grid div:nth-child(2) { border:0; }.service-grid, .project-grid, .testimonial-grid, .industry-grid { grid-template-columns:1fr; }.mini-projects { grid-template-columns:repeat(3,1fr); }.mini-project img { height:70px; }.process-grid { grid-template-columns:repeat(2,1fr); }.process-step:last-child { grid-column:span 2; }.benefit-list { gap:14px; }.split-image img { height:290px; }.hero-copy h1 { letter-spacing:-2px; }.home-section, .testimonial-section, .faq-section, .cta-section, .split-section { padding:52px 0; } }
+
+.chat-widget {
+  right: 24px;
+  bottom: 24px;
+}
+
+.chat-widget-panel {
+  width: min(320px, calc(100vw - 32px));
+  height: min(420px, calc(100dvh - 96px));
+}
+
+@media (max-width: 767px) {
+  .chat-widget {
+    right: 16px;
+    bottom: 16px;
+  }
+}
