@@ -2,32 +2,50 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer style={{ background: 'var(--color-primary-dark)', color: '#fff', padding: 'var(--space-8) 0' }}>
-      <div className="container" style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-6)' }}>
-        <div style={{ flex: 1, minWidth: 200 }}>
-          <strong>Misorium Technologies</strong>
-          <p>Building digital experiences that help businesses grow.</p>
+    <footer className="site-footer">
+      <div className="container">
+        <div className="footer-top">
+          <div className="footer-brand">
+            <Link className="footer-logo" to="/" aria-label="Misorium Technologies home">
+              <span className="footer-logo-mark">M</span>
+              <span>Misorium <small>TECHNOLOGIES</small></span>
+            </Link>
+            <p>We turn ambitious ideas into digital experiences that help businesses grow.</p>
+            <Link className="footer-cta" to="/book-consultation">Start a conversation <span>→</span></Link>
+          </div>
+
+          <div className="footer-links">
+            <div>
+              <h2>Explore</h2>
+              <Link to="/about">About Us</Link>
+              <Link to="/services">Services</Link>
+              <Link to="/portfolio">Portfolio</Link>
+              <Link to="/case-studies">Case Studies</Link>
+            </div>
+            <div>
+              <h2>Resources</h2>
+              <Link to="/blog">Blog</Link>
+              <Link to="/industries">Industries</Link>
+              <Link to="/careers">Careers</Link>
+              <Link to="/contact">Contact Us</Link>
+            </div>
+            <div className="footer-contact">
+              <h2>Let’s connect</h2>
+              <a href="mailto:hello@misorium.com">hello@misorium.com</a>
+              <a href="tel:+919876543210">+91 98765 43210</a>
+              <p>Mon–Fri, 9:00 AM–6:00 PM IST</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <h4>Company</h4>
-          <Link to="/about">About Us</Link>
+
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} Misorium Technologies. All rights reserved.</span>
+          <div>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/terms">Terms &amp; Conditions</Link>
+            <Link to="/disclaimer">Disclaimer</Link>
+          </div>
         </div>
-        <div>
-          <h4>Services</h4>
-          <Link to="/services">Services</Link>
-        </div>
-        <div>
-          <h4>Resources</h4>
-          <Link to="/blog">Blog</Link>
-        </div>
-        <div>
-          <h4>Get In Touch</h4>
-          <Link to="/contact">Contact Us</Link>
-        </div>
-      </div>
-      <div className="container" style={{ marginTop: 'var(--space-6)', fontSize: 13 }}>
-        © {new Date().getFullYear()} Misorium Technologies ·{' '}
-        <Link to="/privacy-policy">Privacy Policy</Link> · <Link to="/terms">Terms & Conditions</Link>
       </div>
     </footer>
   );
