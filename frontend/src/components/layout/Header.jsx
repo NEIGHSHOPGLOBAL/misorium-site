@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import Button from '../common/Button.jsx';
 
 const navLinks = [
@@ -14,35 +15,50 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <header
-      style={{
-        position: 'sticky',
-        top: 0,
-        background: '#fff',
-        boxShadow: '0 1px 0 var(--color-card-border)',
-        zIndex: 50,
-      }}
-    >
-      <div
-        className="container"
-        style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 24px' }}
-      >
-        <Link to="/" style={{ fontWeight: 800 }}>
-          Misorium Technologies
+    <header className="site-header">
+      <div className="container site-header-inner">
+        <Link className="site-logo" to="/" onClick={closeMenu}>
+          <span className="site-logo-mark">M</span>
+          <span>Misorium <small>TECHNOLOGIES</small></span>
         </Link>
-        <nav style={{ display: 'flex', gap: 'var(--space-4)' }}>
+
+        <button
+          className="menu-toggle"
+          type="button"
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={menuOpen}
+          aria-controls="site-navigation"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <nav id="site-navigation" className={`site-navigation${menuOpen ? ' is-open' : ''}`}>
           {navLinks.map((link) => (
-            <Link key={link.to} to={link.to}>
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) => (isActive ? 'is-active' : '')}
+              end={link.to === '/'}
+              onClick={closeMenu}
+            >
               {link.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
-        <div style={{ display: 'flex', gap: 'var(--space-3)' }}>
-          <Link to="/login">
+
+        <div className="header-actions">
+          <Link to="/login" onClick={closeMenu}>
             <Button variant="secondary">Client Login</Button>
           </Link>
-          <Link to="/book-consultation">
+          <Link to="/book-consultation" onClick={closeMenu}>
             <Button variant="accent">Book a Consultation</Button>
           </Link>
         </div>
