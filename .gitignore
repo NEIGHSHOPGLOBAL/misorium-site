@@ -16,3 +16,11 @@ node_modules/
 # public/assets/
 *.log
 .DS_Store
+
+# Secrets kept out of the public site repo
+.env
+resources/views/.env
+resources/views/android/key.properties
+resources/views/signing/upload-keystore.jks
+resources/views/signing/google-services.json
+resources/views/signing/GoogleService-Info.plist
