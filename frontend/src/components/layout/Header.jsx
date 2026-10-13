@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import Button from '../common/Button.jsx';
 
 const navLinks = [
   { to: '/', label: 'Home' },
@@ -12,6 +11,7 @@ const navLinks = [
   { to: '/blog', label: 'Blog' },
   { to: '/careers', label: 'Careers' },
   { to: '/contact', label: 'Contact Us' },
+  { to: '/login', label: 'Client Login' },
 ];
 
 export default function Header() {
@@ -55,12 +55,8 @@ export default function Header() {
         </nav>
 
         <div className="header-actions">
-          <Link to="/login" onClick={closeMenu}>
-            <Button variant="secondary">Client Login</Button>
-          </Link>
-          <Link to="/book-consultation" onClick={closeMenu}>
-            <Button variant="accent">Book a Consultation</Button>
-          </Link>
+          <Link className="header-login" to="/login" onClick={closeMenu}>Client Login</Link>
+          <Link className="header-consultation" to="/book-consultation" onClick={closeMenu}>Book a Consultation</Link>
         </div>
       </div>
     </header>

@@ -265,10 +265,26 @@ a {
   gap: 8px;
 }
 
-.header-actions button {
+.header-actions a {
+  display: inline-block;
   padding: 9px 13px;
   font-size: 11px;
   white-space: nowrap;
+}
+
+.header-login {
+  background: #fff;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-button);
+  font-weight: 600;
+}
+
+.header-consultation {
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: var(--radius-button);
+  font-weight: 600;
 }
 
 .menu-toggle {
