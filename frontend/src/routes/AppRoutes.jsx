@@ -8,6 +8,8 @@ import Login from '../pages/Login.jsx';
 import Register from '../pages/Register.jsx';
 import ForgotPassword from '../pages/ForgotPassword.jsx';
 import BookConsultation from '../pages/BookConsultation.jsx';
+import Cart from '../pages/Cart.jsx';
+import Checkout from '../pages/Checkout.jsx';
 import NotFound from '../pages/NotFound.jsx';
 
 import DashboardLayout from '../pages/DashboardLayout.jsx';
@@ -36,6 +38,8 @@ export default function AppRoutes() {
       <Route path="/pricing" element={<Placeholder title="Pricing" />} />
       <Route path="/contact" element={<Placeholder title="Contact Us" />} />
       <Route path="/book-consultation" element={<BookConsultation />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="/checkout" element={<Checkout />} />
       <Route path="/tickets" element={<Placeholder title="Ticket Booking" />} />
       <Route path="/privacy-policy" element={<Placeholder title="Privacy Policy" />} />
       <Route path="/terms" element={<Placeholder title="Terms & Conditions" />} />
